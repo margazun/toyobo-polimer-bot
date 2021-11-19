@@ -1,7 +1,6 @@
 import rc from 'rc';
 import { ConfigT } from "../types/config";
 import { config as dotConfig } from "dotenv";
-import { json } from 'stream/consumers';
 
 
 function getConfig(name:string): ConfigT {
