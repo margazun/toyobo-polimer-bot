@@ -53,4 +53,45 @@ export type InkCompatibilityT = 'Водные'
                             | 'Толуольные'
                             | 'Термокраски'
 
-export type CountryOfOriginT = "Япония"
+export type CountryOfOriginT = "Япония";
+
+export interface PolimerFilterT {
+    polimerType?: PolimerTypeT,
+    printType?: PrintTypeT,
+    application?: Array<ApplicationT>,
+    baseMaterial?: BaseMaterialT,
+    inkCompaibility?: Array<InkCompatibilityT>
+    lineature?: LineatureT
+}
+
+export function filterPolimer(polimers: Array<PolimerT>, filter: PolimerFilterT): Array<PolimerT> {
+    let result = polimers;
+    if (filter.polimerType) {
+        result = result.filter(polimer => {
+            return polimer.polimerType.indexOf(filter.polimerType as string) < 0 ? false : true
+        });
+    }
+    if (filter.printType) {
+        result = result.filter(polimer => {
+            return polimer.printType === filter.printType;
+        });
+    }
+    if (filter.application) {
+        filter.application.forEach(application => {
+            result = result.filter(polimer => {
+                return polimer.applications.indexOf(application) < 0 ? false : true
+            })
+        })
+    }
+    if (filter.inkCompaibility) {
+        filter.inkCompaibility.forEach(ink => {
+            result = result.filter(polimer => {
+                if (polimer.inkCompatibility) {
+                    return polimer.inkCompatibility.indexOf(ink) < 0 ? false : true
+                }
+                return false
+            })
+        })
+    }
+    return result
+}
