@@ -1,6 +1,8 @@
-import { Composer, Context, Markup, Scenes,  } from 'telegraf';
+import { Composer, Context, Markup, Scenes, Telegraf,  } from 'telegraf';
+import { BaseScene } from 'telegraf/typings/scenes';
 import { PolimerFilterT } from "../../../types/polimer.type";
-import { getKeyboard } from './keyboard.polimer';
+import { PolimerContext } from '../../bot copy';
+import { polimerKeyboard } from './keyboard.polimer';
 import { getFilterText } from './polimer.helper';
 
 // let keyboard = (ctx: Context) => {
@@ -17,18 +19,41 @@ import { getFilterText } from './polimer.helper';
 // 		),
 // 	])
 // }
-export const polimerScene = new Composer<Scenes.WizardContext>();
-polimerScene.start( async (ctx) => {
-	await enterScene(ctx);
+let message: number;
+let chat: number;
+export const polimerScene = new Scenes.BaseScene<PolimerContext>('polimerScene');
+polimerScene.enter(async (ctx) => {
+	await ctx.replyWithHTML(
+		`<b>Выберите тип полимера</b>\n${getFilterText(ctx.polimerFilter)}`,
+		Markup.inlineKeyboard(polimerKeyboard)
+	);
+
+	message = ctx.message ? ctx.message.message_id : 0;
+	message = ctx.chat ? ctx.chat.id : 0;
+	console.log('ENTER: ', JSON.stringify(ctx.polimerFilter, null, 2));
 });
+// polimerScene.start( async (ctx) => {
+// 	await enterScene(ctx);
+// });
 
 polimerScene.action('separator', async (ctx) => {
 	await ctx.answerCbQuery();
 });
 
-polimerScene.action('digital', async (ctx) => {
-	console.log(`DIGITAL: ${JSON.stringify(ctx.state.data, null, 2)}`);
-	await ctx.answerCbQuery();
+polimerScene.action('digital', async (ctx: PolimerContext) => {
+	console.log('Setting digital type');
+	ctx.scene.session.filter.polimerType = 'Цифровой';
+	console.log(`DIGITAL Scene: ${JSON.stringify(ctx.scene.session.filter, null, 2)}`);
+	await ctx.answerCbQuery('Цифровой');
+	await updateMessage(ctx);
+});
+
+polimerScene.action('analogue', async (ctx: PolimerContext) => {
+	console.log('Setting analogue type');
+	ctx.scene.session.filter.polimerType = 'Аналоговый';
+	console.log(`ANALOGUE Scene: ${JSON.stringify(ctx.scene.session.filter, null, 2)}`);
+	await ctx.answerCbQuery('Аналоговый');
+	await updateMessage(ctx);
 });
 
 
@@ -60,15 +85,22 @@ polimerScene.action('digital', async (ctx) => {
 function textMessage(filter: PolimerFilterT) {
 	return `<b>Выберите тип полимера</b>\n${getFilterText(filter)}`
 }
-async function enterScene(ctx: Context) {
-	if(!(ctx.state.data)) {
-		ctx.state.data = {
-			filter: {}
-		}
-	}
-	console.log('DATA: ', JSON.stringify(ctx.state.data, null, 2));
-	return await ctx.replyWithHTML(
-		`<b>Выберите тип полимера</b>\n${getFilterText(ctx.state.data.filter)}`,
-		Markup.inlineKeyboard(getKeyboard(ctx))
+async function enterScene(ctx: PolimerContext) {
+	await ctx.replyWithHTML(
+		`<b>Выберите тип полимера</b>\n${getFilterText(ctx.scene.session.filter)}`,
+		Markup.inlineKeyboard(polimerKeyboard)
 	);
+}
+
+async function updateMessage(ctx: PolimerContext) {
+	console.log('Updating message');
+	try {
+		console.log('Deleting message');
+		await ctx.deleteMessage();
+		console.log('Message deleted');
+		await enterScene(ctx); 
+		console.log('New message sended');
+	} catch (e) {
+		console.error(e)
+	}
 }

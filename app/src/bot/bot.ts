@@ -1,26 +1,43 @@
-import { Telegraf, session, Scenes, Composer, Markup } from "telegraf";
-import { config } from "../config";
-import { USERS } from "../users/users";
-import { polimerScene } from './scenes/polimer/polimer.scene';
-import { taxiScene } from "./scenes/taxi.scene";
+import { config } from "../config"
+import { PolimerFilterT } from "../types/polimer.type";
+import { polimerKeyboard } from "./bot.keyboard";
+const Telegram = require('node-telegram-bot-api')
 
+export const bot = new Telegram(config.bot.token, { polling: true });
 
-const token = config.bot.token;
-const superWizard = new Scenes.WizardScene(
-    'super-wizard',
-    polimerScene
-);
+const message: {chat?: number, id?: number} = {};
+const filter: PolimerFilterT = { application: [] }
 
-export const bot = new Telegraf<Scenes.WizardContext>(token);
-const stage = new Scenes.Stage<Scenes.WizardContext>(
-  [ superWizard ],
-  { default: 'super-wizard', }
-);
-
-bot.use(session());
-bot.use(stage.middleware());
-bot.use((ctx, next) => {
-  ctx.state.data = {};
-  next();
+bot.onText(/\/start/, (msg: any) => {
+  message.chat = msg.chat.id;
+  bot.sendMessage(msg.chat.id, `<b>Выберите тип полимера</b>\n`, {
+    parse_mode: 'HTML',
+    reply_markup: {
+      resize_keyboard: true,
+      inline_keyboard: polimerKeyboard
+    }
+  }).then((result: any) => {
+    message.id = result.message_id;
+  });
 });
-bot.launch();
+
+bot.on('callback_query', (query: any) => {
+  const data: {t: string, p: PolimerFilterT } = JSON.parse(query.data);
+  console.log(JSON.stringify(data, null, 2))
+  if (data.t === 'data') {
+    if('polimerType' in data.p || 'printType' in data.p) {
+      Object.assign(filter, data.p)
+    }
+    if('application' in data.p) {
+      if (filter.application) {
+        filter.application.push(data.p.application)
+      }
+    }
+  }
+  bot.answerCallbackQuery(query.id);
+  console.log(JSON.stringify(filter, null, 2));
+});
+
+bot.on('message', (msg: any) => {
+  bot.deleteMessage(msg.chat.id, msg.message_id);
+});
