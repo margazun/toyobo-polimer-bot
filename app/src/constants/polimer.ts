@@ -182,7 +182,7 @@ export const POLIMERS: PolimerT[] = [
         polimerType: "Аналоговый",
         printType: "Высокая",
         applications: [
-            "Термопечать печать"
+            "Термопечать"
         ],
         washoutSolution: 'Вода',
         thickness: [1.70],
@@ -223,7 +223,7 @@ export const POLIMERS: PolimerT[] = [
         polimerType: "Аналоговый",
         printType: "Высокая",
         applications: [
-            "Термопечать печать"
+            "Термопечать"
         ],
         washoutSolution: 'Вода',
         thickness: [1.70, 2.00],

@@ -28,7 +28,7 @@ export type ApplicationT = 'Тампонная печать'
                     | 'Тиснение, конгрев'
                     | 'Печать по скотчу'
                     | 'Плоская трафаретная печать'
-                    | 'Термопечать печать'
+                    | 'Термопечать'
                     | 'Изготовление табличек'
                     | 'Выборочная лакировка';
 
@@ -56,11 +56,22 @@ export type InkCompatibilityT = 'Водные'
 export type CountryOfOriginT = "Япония";
 
 export interface PolimerFilterT {
+    applications?: Array<ApplicationT>,
     polimerType?: PolimerTypeT,
     printType?: PrintTypeT,
     application?: Array<ApplicationT>,
     baseMaterial?: BaseMaterialT,
     inkCompaibility?: Array<InkCompatibilityT>
+    lineature?: LineatureT
+}
+
+export interface PolimerFilterDataT {
+    applications: number,
+    polimerType?: PolimerTypeT,
+    printType?: PrintTypeT,
+    application?: ApplicationT,
+    baseMaterial?: BaseMaterialT,
+    inkCompaibility?: InkCompatibilityT,
     lineature?: LineatureT
 }
 
@@ -93,5 +104,30 @@ export function filterPolimer(polimers: Array<PolimerT>, filter: PolimerFilterT)
             })
         })
     }
+    if (filter.lineature) {
+        result = result.filter(polimer => {
+            return polimer.lineature === filter.lineature;
+        });
+    }
+    if (filter.baseMaterial) {
+        result = result.filter(polimer => {
+            return polimer.baseMaterial === filter.baseMaterial;
+        });
+    }
     return result
 }
+
+export const APPLICATIONS: Array<ApplicationT> = [
+    'Тампонная печать',
+    'Плоская печать этикеток, ярлыков',
+    'Типоофсет (Сухой офсет)',
+    'Высококачественная ротационная печать',
+    'Качественная ротационная печать',
+    'Ротационная печать',
+    'Тиснение, конгрев',
+    'Печать по скотчу',
+    'Плоская трафаретная печать',
+    'Термопечать',
+    'Изготовление табличек',
+    'Выборочная лакировка',
+];
