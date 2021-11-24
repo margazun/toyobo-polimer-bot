@@ -49,7 +49,7 @@ bot.onText(/\/start/, (msg: any) => {
 
 bot.onText(/\/showselected/, (msg: any) => {
   if (resultMessage.chat) {
-    bot.deleteMessage()
+    bot.deleteMessage(resultMessage.chat, resultMessage.id);
   }
   bot.sendMessage(msg.chat.id, printSelected(), {
     parse_mode: 'HTML',
