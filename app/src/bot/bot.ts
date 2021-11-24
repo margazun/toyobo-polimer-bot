@@ -12,9 +12,15 @@ interface MessageT {
   id?: number
 }
 
-const message: MessageT = {};
-const resultMessage: MessageT = {};
-const filter: PolimerFilterT = { applications: [], inkCompaibility: [] }
+let message: MessageT = {};
+let resultMessage: MessageT = {};
+let filter: PolimerFilterT = { applications: [], inkCompaibility: [] }
+
+function initState() {
+  message = {};
+  resultMessage = {};
+  filter = { applications: [], inkCompaibility: [] }
+}
 
 
 
@@ -28,6 +34,7 @@ bot.onText(/\/start/, (msg: any) => {
     bot.sendMessage(msg.chat.id, text);
     return
   }
+  initState();
   message.chat = msg.chat.id;
   bot.sendMessage(msg.chat.id, `<b>Выберите тип полимера</b>\n`, {
     parse_mode: 'HTML',
