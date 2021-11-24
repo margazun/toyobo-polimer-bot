@@ -47,6 +47,9 @@ bot.onText(/\/showselected/, (msg: any) => {
   bot.sendMessage(msg.chat.id, printSelected(), {
     parse_mode: 'HTML',
     disable_web_page_preview: true
+  }).then((result: any) => {
+    resultMessage.id = result.message.id;
+    resultMessage.chat = result.chat.id;
   });
 });
 
