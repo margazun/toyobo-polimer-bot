@@ -17,6 +17,7 @@ const resultMessage: MessageT = {};
 const filter: PolimerFilterT = { applications: [], inkCompaibility: [] }
 
 
+
 bot.onText(/\/start/, (msg: any) => {
   if(getUsers().filter(user => { return user.id === msg.chat.id }).length === 0) {
     let text = `id: ${msg.chat.id}`;
@@ -39,7 +40,7 @@ bot.onText(/\/start/, (msg: any) => {
   });
 });
 
-bot.onText(/\/showSelected/, (msg: any) => {
+bot.onText(/\/showselected/, (msg: any) => {
   if (resultMessage.chat) {
     bot.deleteMessage()
   }
@@ -106,7 +107,7 @@ function updateTable() {
   try {
     bot.editMessageText(
       `Выбрано полимеров: ${list.length} из ${POLIMERS.length}
-/showSelected - показать выбраные полимеры`,
+/showselected - показать выбраные полимеры`,
       {
         chat_id: message.chat,
         message_id: message.id,
