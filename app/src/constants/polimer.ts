@@ -8,7 +8,7 @@ export const POLIMERS: PolimerT[] = [
         applications: [ "Высококачественная ротационная печать"],
         washoutSolution: 'вода + COSMO SOAP',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: "77",
+        hardness: ['77'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         podioLink: 'https://podio.com/yamru/flekso/apps/polimery/items/41'
@@ -23,11 +23,11 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'вода',
         thickness: [0.80, 0.95],
-        hardness: "55",
+        hardness: ['55'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: "175 lpi",
-        reliefDepth: "0.65",
+        reliefDepth: ['0.65'],
         inkCompatibility: [
             "УФ", "Масляные"
         ],
@@ -44,10 +44,12 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Мыльный раствор воды',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.14 - 81
-1.70 - 76
-2.54 - 71
-2.84 - 70`,
+        hardness: [
+            '1.14 - 81',
+            '1.70 - 76',
+            '2.54 - 71',
+            '2.84 - 70',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: "175 lpi",
@@ -67,7 +69,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.95, 0.70],
-        hardness: `40`,
+        hardness: ['40'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '150 lpi',
@@ -87,7 +89,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.95],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
@@ -108,7 +110,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.73, 0.83, 0.95],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Стальная",
         resolution: "1-95%",
         lineature: '175 lpi',
@@ -127,13 +129,15 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.73, 0.83, 0.95],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Стальная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `0.73 - 0.65
-0.83 - 0.53
-0.95 - 0.43`,
+        reliefDepth: [
+            '0.73 - 0.65',
+            '0.83 - 0.53',
+            '0.95 - 0.43',
+        ],
         inkCompatibility: [
             "Спиртовые", "УФ", "Масляные"
         ],
@@ -150,7 +154,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.80, 0.95],
-        hardness: `55`,
+        hardness: ['55'],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
         lineature: '150 lpi',
@@ -169,8 +173,10 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.10, 0.15, 0.20, 0.25, 0.35, 0.40],
-        hardness: `0.1 - 67
-0.2 - 60`,
+        hardness: [
+            '0.1 - 67',
+            '0.2 - 60',
+        ],
         inkCompatibility: [
             "УФ"
         ],
@@ -186,11 +192,11 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [1.70],
-        hardness: `25`,
+        hardness: ['25'],
         baseMaterial: "Стальная",
         resolution: "5-90%",
         lineature: '150 lpi',
-        reliefDepth: "1.48",
+        reliefDepth: ['1.48'],
         inkCompatibility: [
             "Термокраски"
         ],
@@ -206,12 +212,14 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.43, 0.73],
-        hardness: `87`,
+        hardness: ['87'],
         baseMaterial: "Стальная",
         resolution: "3-95%",
         lineature: '150 lpi',
-        reliefDepth: `0.43 - 0.21
-0.73 - 0.43`,
+        reliefDepth: [
+            '0.43 - 0.21',
+            '0.73 - 0.43',
+        ],
         inkCompatibility: [
             "УФ", "Масляные", "Толуольные"
         ],
@@ -227,11 +235,11 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [1.70, 2.00],
-        hardness: `25`,
+        hardness: ['25'],
         baseMaterial: "Полиэфирная",
         resolution: "5-90%",
         lineature: '150 lpi',
-        reliefDepth: "1.48",
+        reliefDepth: ['1.48'],
         inkCompatibility: [
             "Термокраски"
         ],
@@ -248,11 +256,11 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [1.14],
-        hardness: `27`,
+        hardness: ['27'],
         baseMaterial: "Полиэфирная",
         resolution: "3-95%",
         lineature: '150 lpi',
-        reliefDepth: `0.85`,
+        reliefDepth: ['0.85'],
         inkCompatibility: [
             "УФ"
         ],
@@ -267,10 +275,10 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.95],
-        hardness: `70`,
+        hardness: ['70'],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
-        reliefDepth: `0.70`,
+        reliefDepth: ['0.70'],
         countryOfOrigin: "Япония",
         podioLink: 'https://podio.com/yamru/flekso/apps/polimery/items/27'
     },
@@ -284,7 +292,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.80, 0.95],
-        hardness: `55`,
+        hardness: ['55'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
@@ -303,8 +311,10 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, вода + CosmoSoap',
         thickness: [1.14, 1.70],
-        hardness: `1.14 - 77
-1.70 - 71`,
+        hardness: [
+            '1.14 - 77',
+            '1.70 - 71',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
@@ -323,8 +333,10 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, вода + CosmoSoap',
         thickness: [1.14, 1.70],
-        hardness: `1.14 - 77
-1.70 - 71`,
+        hardness: [
+            '1.14 - 77',
+            '1.70 - 71',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
@@ -343,10 +355,12 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, вода + CosmoSoap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.14 - 77
-1.70 - 71
-2.54 - 65
-2.84 - 64`,
+        hardness: [
+            '1.14 - 77',
+            '1.70 - 71',
+            '2.54 - 65',
+            '2.84 - 64',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
@@ -365,13 +379,17 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, вода + CosmoSoap',
         thickness: [1.14, 1.70],
-        hardness: `1.14 - 77
-1.70 - 71`,
+        hardness: [
+            '1.14 - 77',
+            '1.70 - 71',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
-        reliefDepth: `1.14 - 0.5-0.7
-1.70 - 0.07-0.9`,
+        reliefDepth: [
+            '1.14 - 0.5-0.7',
+            '1.70 - 0.07-0.9',
+        ],
         inkCompatibility: [
             "Водные", "УФ"
         ],
@@ -387,10 +405,12 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, вода + CosmoSoap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.14 - 76
-1.70 - 68
-2.54 - 60
-2.84 - 64`,
+        hardness: [
+            '1.14 - 76',
+            '1.70 - 68',
+            '2.54 - 60',
+            '2.84 - 64',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
         lineature: '150 lpi',
@@ -412,7 +432,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.95],
-        hardness: `25`,
+        hardness: ['25'],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
         lineature: '150 lpi',
@@ -433,7 +453,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.73, 0.83, 0.95],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Стальная",
         resolution: "1-95%",
         lineature: '175 lpi',
@@ -454,7 +474,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.70, 0.83, 0.95],
-        hardness: `55`,
+        hardness: ['55'],
         baseMaterial: "Стальная",
         resolution: "1-95%",
         lineature: '200 lpi',
@@ -475,11 +495,11 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [1.14],
-        hardness: `27`,
+        hardness: ['27'],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
         lineature: '150 lpi',
-        reliefDepth: "0.85",
+        reliefDepth: ['0.85'],
         inkCompatibility: [
             "УФ",
         ],
@@ -496,7 +516,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.70, 0.95],
-        hardness: `27`,
+        hardness: ['27'],
         baseMaterial: "Полиэфирная",
         resolution: "3-95%",
         lineature: '150 lpi',
@@ -516,7 +536,7 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.70, 0.95, 1.70],
-        hardness: `40`,
+        hardness: ['40'],
         baseMaterial: "Полиэфирная",
         resolution: "3-95%",
         lineature: '150 lpi',
@@ -539,13 +559,17 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70],
-        hardness: `1.14 - 81
-1.70 - 86`,
+        hardness: [
+            '1.14 - 81',
+            '1.70 - 86',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
-        reliefDepth: `1.14 - 0.7
-1.70 - 0.9`,
+        reliefDepth: [
+            '1.14 - 0.7',
+            '1.70 - 0.9',
+        ],
         inkCompatibility: [
             "УФ",
             "Водные",
@@ -564,13 +588,17 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70],
-        hardness: `1.14 - 77
-1.70 - 71`,
+        hardness: [
+            '1.14 - 77',
+            '1.70 - 71',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
-        reliefDepth: `1.14 - 0.7
-1.70 - 0.9`,
+        reliefDepth: [
+            '1.14 - 0.7',
+            '1.70 - 0.9',
+        ],
         inkCompatibility: [
             "УФ",
             "Водные",
@@ -589,13 +617,15 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.95, 1.70, 2.00],
-        hardness: `25`,
+        hardness: ['25'],
         baseMaterial: "Полиэфирная",
         resolution: "3-95%",
         lineature: '150 lpi',
-        reliefDepth: `1.14 - 0.7
-1.70 - 0.9
-2.00 - 1.78`,
+        reliefDepth: [
+            '1.14 - 0.7',
+            '1.70 - 0.9',
+            '2.00 - 1.78',
+        ],
         inkCompatibility: [
             "Масляные",
             "Толуольные",
@@ -614,12 +644,14 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.80, 0.95],
-        hardness: `55`,
+        hardness: ['55'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '200 lpi',
-        reliefDepth: `0.80 - 0.60
-0.95 - 0.68`,
+        reliefDepth: [
+            '0.80 - 0.60',
+            '0.95 - 0.68',
+        ],
         inkCompatibility: [
             "УФ",
         ],
@@ -635,12 +667,14 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.80, 0.95],
-        hardness: `55`,
+        hardness: ['55'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `0.80 - 0.60
-0.95 - 0.68`,
+        reliefDepth: [
+            '0.80 - 0.60',
+            '0.95 - 0.68',
+        ],
         inkCompatibility: [
             "УФ",
             "Масляные",
@@ -661,17 +695,19 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.43, 0.53, 0.58, 0.73, 0.83, 0.95, 1.75],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Стальная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `0.43 - 0.21
-0.53 - 0.31
-0.58 - 0.36
-0.73 - 0.43
-0.83 - 0.53
-0.95 - 0.65
-1.75 - 1.45`,
+        reliefDepth: [
+            '0.43 - 0.21',
+            '0.53 - 0.31',
+            '0.58 - 0.36',
+            '0.73 - 0.43',
+            '0.83 - 0.53',
+            '0.95 - 0.65',
+            '1.75 - 1.45',
+        ],
         inkCompatibility: [
             "УФ",
             "Масляные",
@@ -689,12 +725,14 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода',
         thickness: [0.58, 0.80, 0.95, 1.75],
-        hardness: `67`,
+        hardness: ['67'],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `0.80 - 0.53
-0.95 - 0.68`,
+        reliefDepth: [
+            '0.80 - 0.53',
+            '0.95 - 0.68',
+        ],
         inkCompatibility: [
             "УФ",
             "Масляные",
@@ -712,17 +750,21 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.17 - 76
-1.70 - 68
-2.54 - 61
-2.84 - 60`,
+        hardness: [
+            '1.17 - 76',
+            '1.70 - 68',
+            '2.54 - 61',
+            '2.84 - 60',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "2-95%",
         lineature: '150 lpi',
-        reliefDepth: `1.14 - 0.5-0.7
-1.70 - 0.7-0.9
-2.54 - 0.9-1.1
-2.84 - 1.1-1.3`,
+        reliefDepth: [
+            '1.14 - 0.5-0.7',
+            '1.70 - 0.7-0.9',
+            '2.54 - 0.9-1.1',
+            '2.84 - 1.1-1.3',
+        ],
         inkCompatibility: [
             "УФ",
             "Водные",
@@ -741,17 +783,21 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.17 - 71
-1.70 - 60
-2.54 - 52
-2.84 - 50`,
+        hardness: [
+            '1.17 - 71',
+            '1.70 - 60',
+            '2.54 - 52',
+            '2.84 - 50',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `1.14 - 0.5-0.7
-1.70 - 0.7-0.9
-2.54 - 1.1-1.3
-2.84 - 1.3-1.7`,
+        reliefDepth: [
+            '1.14 - 0.5-0.7',
+            '1.70 - 0.7-0.9',
+            '2.54 - 1.1-1.3',
+            '2.84 - 1.3-1.7',
+        ],
         inkCompatibility: [
             "Водные",
             "Спиртовые",
@@ -770,17 +816,21 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.17 - 81
-1.70 - 76
-2.54 - 71
-2.84 - 70`,
+        hardness: [
+            '1.17 - 81',
+            '1.70 - 76',
+            '2.54 - 71',
+            '2.84 - 70',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `1.14 - 0.5-0.7
-1.70 - 0.7-0.9
-2.54 - 1.1-1.3
-2.84 - 1.3-1.7`,
+        reliefDepth: [
+            '1.14 - 0.5-0.7',
+            '1.70 - 0.7-0.9',
+            '2.54 - 1.1-1.3',
+            '2.84 - 1.3-1.7',
+        ],
         inkCompatibility: [
             "Водные",
             "Спиртовые",
@@ -800,17 +850,21 @@ export const POLIMERS: PolimerT[] = [
         ],
         washoutSolution: 'Вода + порошок, либо вода + Cosmo Soap',
         thickness: [1.14, 1.70, 2.54, 2.84],
-        hardness: `1.17 - 77
-1.70 - 71
-2.54 - 65
-2.84 - 64`,
+        hardness: [
+            '1.17 - 77',
+            '1.70 - 71',
+            '2.54 - 65',
+            '2.84 - 64',
+        ],
         baseMaterial: "Полиэфирная",
         resolution: "1-95%",
         lineature: '175 lpi',
-        reliefDepth: `1.14 - 0.5-0.7
-1.70 - 0.7-0.9
-2.54 - 1.1-1.3
-2.84 - 1.3-1.7`,
+        reliefDepth: [
+            '1.14 - 0.5-0.7',
+            '1.70 - 0.7-0.9',
+            '2.54 - 1.1-1.3',
+            '2.84 - 1.3-1.7',
+        ],
         inkCompatibility: [
             "Водные",
             "Спиртовые",

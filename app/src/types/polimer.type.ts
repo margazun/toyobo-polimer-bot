@@ -7,11 +7,11 @@ export interface PolimerT {
     washoutSolution?: string,
     link?: string,
     thickness: Array<ThicknessT>,
-    hardness: string,
+    hardness: Array<string>,
     baseMaterial?: BaseMaterialT,
     resolution?: ResolutionT,
     lineature?: LineatureT,
-    reliefDepth?: ReliefDepthT | string,
+    reliefDepth?: Array<string>,
     inkCompatibility?: Array<InkCompatibilityT>
     countryOfOrigin?: CountryOfOriginT,
     podioLink: string
@@ -87,8 +87,8 @@ export function filterPolimer(polimers: Array<PolimerT>, filter: PolimerFilterT)
             return polimer.printType === filter.printType;
         });
     }
-    if (filter.application) {
-        filter.application.forEach(application => {
+    if (filter.applications) {
+        filter.applications.forEach(application => {
             result = result.filter(polimer => {
                 return polimer.applications.indexOf(application) < 0 ? false : true
             })
